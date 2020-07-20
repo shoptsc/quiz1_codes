@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+# Importing the dataset
+df = pd.read_csv('https://raw.githubusercontent.com/WalePhenomenon/climate_change/master/fuel_ferc1.csv')
+
+# Saving the datset to my local directory....
+# Saving the dataset will make you to be able to work offline with the dataset
+# dataset.to_csv('fuel_ferc1.csv')
+
+# Load the saved data from your local directory and name it df
+# df = pd.read_csv('fuel_ferc1.csv')
+
+# Find the Statistics of the dataset with numerical values
+print(df.describe())
+
+# To know the total number of null or empty values
+print(df.isna().sum())
+
+# To know the total number of rows in the dataset and to show the presence of missing values
+print(df.count())
+
+# To view the first five rows of the dataset
+print(df.head())
+
+# To find the correlation between the dataset
+print(df.corr())
+
+# To know the year with the highest value of fuel_cost_per_delivered
+# Sort the two data in descending order.
+print(df.iloc[:, [2,9]].sort_values(by = ['fuel_cost_per_unit_delivered'], ascending =False))
